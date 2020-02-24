@@ -4,12 +4,21 @@
   "description": "Literally Server Stuff",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lern": "say learn you some node for great good",
+    "serve": "nohup node index.js & open -a Safari http:localhost:3000/spider/static.html",
+    "dev": "nodemon server.js"
   },
   "author": "Two Intergalactic Spiders",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
     "express": "^4.17.1",
-    "mongodb": "^3.5.2"
+    "mongodb": "^3.5.2",
+    "mongoku": "^1.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

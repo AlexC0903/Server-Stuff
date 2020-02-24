@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MY APP</title>
+  <style>
+    .nav_item {
+        display: inline;
+        font-size: 50px;
+        
+    }
+    .active {
+        font-style: bold;
+        color: #5cc400;
+        background-color: #444;
+    }
+    .question {
+        margin: 50px;
+    }
+</style>
+</head>
+<body>
+    <div class="navigation">
+        <div class="active nav_item"><a href="http://localhost:3000/">Home</a></div>
+        <div class="nav_item"><a href="http://localhost:3000/quotes">Quotes</a></div>
+    </div>
+  May Node and Express be with you.
+  <img src="spider/fish.jpg" alt="iamfishgiver"> 
+  <ul class="quotes">
+  <% for(var i=0; i<quotes.length; i++) {%>
+    <li class="quote">
+      <span><%= quotes[i].name %>:</span>
+      <span><%= quotes[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/submitQuotes" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

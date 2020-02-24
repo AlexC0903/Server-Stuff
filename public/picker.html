@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Picker</title>
+    <style>
+        .navigation  {
+            display: inline;
+            font: 100;
+            font-style: italic;
+        }
+        .item {
+            
+        }
+
+        #result {
+            background-color: aqua;
+            width: 889px;
+            height: 200px;
+            font-size: 150px;
+        }
+
+        textarea {
+            font-size: 15px;
+            float: left;
+        }
+
+        #spinButton {
+            font-size: 30px;
+            font-style: Bold;
+            font-family:'Times New Roman', Times, serif;
+            padding: 165px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navigation">
+    </div>
+    <!-- <form action="/pickRandom" method="POST"> -->
+    <form>
+        <textarea id="Options" type="text" cols="60" rows="20" placeholder="Options(1 in each line)" name="Options"></textarea>
+        <button type="button" id="spinButton" type="Spin" onclick="showResult()">Spin</button>
+    </form>
+    <div id="result">
+    </div>
+    <script>
+        function showResult(array="text") {
+            const arrayText = document.getElementById("Options").value
+            array = arrayText.split("\n")
+            console.log(array)
+            // if (array[array.length] == null) { array.pop() }
+            console.log(array[array.length])
+            const arrLen = array.length
+            console.log(arrLen)
+            const result = array[Math.floor(Math.random() * arrLen)]
+            console.log(result)
+            document.getElementById('result').innerHTML = result
+            document.getElementById("Options").value = arrayText
+        }
+    </script>
+</body>
+</html>
