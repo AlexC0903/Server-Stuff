@@ -55,7 +55,7 @@ MongoClient.connect(
               // send HTML file populated with quotes here
               if (err) return console.log(err)
               // renders index.ejs
-              res.render('index.ejs', {quotes: results})
+            //   res.render('index.ejs', {quotes: results})
             })
         })
 
